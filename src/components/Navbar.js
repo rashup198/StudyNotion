@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/Logo.svg'
+import { toast } from 'react-hot-toast';
 
 const Navbar = (props) => {
     let isLoggedIn = props.isLoggedIn;
@@ -47,7 +48,10 @@ const Navbar = (props) => {
                 </Link>
             }
             {  isLoggedIn &&
-                <Link to="/">
+                <Link to="/" onClick={()=>{
+                    setIsLoggedIn(false)
+                    toast.success("Logged Out Successfully")
+                }}>
                     <button>
                         Log Out
                     </button>
