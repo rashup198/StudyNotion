@@ -2,9 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/Logo.svg'
 
-const Navbar = () => {
+const Navbar = (props) => {
+    let isLoggedIn = props.isLoggedIn;
+    let setIsLoggedIn = props.setIsLoggedIn;
   return (
-    <div className='flex'>
+    <div className='flex justify-evenly'>
 
         <Link to="/">
             <img src={Logo} alt='Logo' width={160} height={32} loading='lazy'></img>
@@ -29,13 +31,38 @@ const Navbar = () => {
         {/* login signUp Logout Dashboard */}
 
 
-        <div>
-            <button>
-                
-            </button>
+        <div className=' flex ml-5 mr-3 gap-3'> 
+            { !isLoggedIn &&
+                <Link to="/login">
+                    <button className='text-black'>
+                        Login
+                    </button>
+                </Link>
+            }
+            {   !isLoggedIn &&
+                <Link to="/signup">
+                    <button className='text-black'>
+                        Sign Up
+                    </button>
+                </Link>
+            }
+            {  isLoggedIn &&
+                <Link to="/">
+                    <button>
+                        Log Out
+                    </button>
+                </Link>
+            }
+            { isLoggedIn &&
+                <Link to="/dashboard">
+                    <button>
+                        Dashboard
+                    </button>
+                </Link>
+            }
         </div>
       
-    </div>
+    </div> 
   )
 }
 
