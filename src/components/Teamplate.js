@@ -14,7 +14,7 @@ const Teamplate = ({title , desc1, desc2, image , formtype, setIsLoggedIn}) => {
         <span>{desc2}</span>
       </p>
 
-         {formtype === "signup" ? (<SignupForm></SignupForm>) : (<LoginForm></LoginForm>)}   
+         {formtype === "signup" ? (<SignupForm setIsLoggedIn={setIsLoggedIn}></SignupForm>) : (<LoginForm setIsLoggedIn={setIsLoggedIn}></LoginForm>)}   
      
 
         <div>
