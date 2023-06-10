@@ -1,5 +1,4 @@
 import React from 'react'
-import Signup from '../pages/Signup'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
 import frameImage from '../assets/frame.svg'
