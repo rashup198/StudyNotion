@@ -1,9 +1,10 @@
 import React from 'react'
 import LoginForm from './LoginForm'
 import SignupForm from './SignupForm'
-import frameImage from '../assets/frame.svg'
+import frameImage from '../assets/frame.png'
 
 const Teamplate = ({title , desc1, desc2, image , formtype, setIsLoggedIn}) => {
+  console.log(formtype);
   return (
     <div>
       <div>
