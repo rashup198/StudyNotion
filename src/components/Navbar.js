@@ -41,7 +41,7 @@ const Navbar = (props) => {
                 </Link>
             }
             {   !isLoggedIn &&
-                <Link to="/signup">
+                <Link to="/signup" >
                     <button className='text-black'>
                         Sign Up
                     </button>
@@ -66,7 +66,7 @@ const Navbar = (props) => {
             }
         </div>
       
-    </div> 
+    </div>    
   )
 }
 
