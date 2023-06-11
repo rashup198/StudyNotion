@@ -5,13 +5,18 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
  
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
-  return( <div>
+  useEffect(()=>{
+    console.log("hello in use effect");
+    setIsLoggedIn(false);
+  })
+
+  return( <div className="w-screen h-screen bg-richblack-900 flex flex-col">
     <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Navbar> 
     <Routes>
         <Route path="/" element={<Home></Home>}></Route>
