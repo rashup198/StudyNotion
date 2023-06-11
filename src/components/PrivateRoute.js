@@ -1,7 +1,7 @@
 import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-const PrivateRoute = ({isLoggedIn, children}) => {
+const PrivateRoute = ({isLoggedIn}) => {
     
  if(isLoggedIn){
     return  <Navigate to="/dashboard"></Navigate>   ;

@@ -20,7 +20,7 @@ function App() {
   return( <div className="w-screen h-screen bg-richblack-900 flex flex-col">
     <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}></Navbar> 
     <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/" element={<Home isLoggedIn={isLoggedIn}></Home>}></Route>
   
         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn}></Login>}  ></Route>
   
@@ -31,7 +31,7 @@ function App() {
         <Dashboard></Dashboard>
         </PrivateRoute>
         }></Route>
-
+ 
     </Routes>
   </div>
   );

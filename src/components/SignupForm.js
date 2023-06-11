@@ -1,12 +1,13 @@
  import React, { useState } from 'react'
 import { toast } from 'react-hot-toast';
  import {AiOutlineEye, AiOutlineEyeInvisible} from 'react-icons/ai' ;
- import { useNavigate } from 'react-router-dom';
+
+ import {Navigate} from 'react-router-dom';
  
 
  
  const SignupForm = ({setIsLoggedIn}) => {
-    const navigate = useNavigate();
+  
     const [formData,setFormData] =useState({
         firstName: "", lastName:"", email:"", password:"", confirmPassword:""
     })
@@ -33,18 +34,18 @@ import { toast } from 'react-hot-toast';
 
             console.log(accountData);
 
-            navigate("/dashboard");
+            return <Navigate to="/dashboard"></Navigate>
         }
    return (
-     <div className=''>
+     <div className='h-[330px] '>
 
      {/* student instructor tab */}
 
-     <div className='flex bg-richblack-800 p-1 gap-x-1 my-6 rounded-full max-w-max'>
+     <div className='flex bg-richblack-800 p-1 gap-x-1 my-2 rounded-full max-w-max'>
         <button
         className={`${accountType === "student" 
         ? "bg-richblack-900 text-richblack-5" 
-        : "bg-transparent text-richblack-200"} px-4 py-1 rounded-full text-[0.875rem] transition-all duration-100 font-semibold }`}
+        : "bg-transparent text-richblack-200"} px-4 py-1 rounded-full text-[0.875rem] transition-all duration-200 font-semibold }`}
          onClick={()=>{
             setAccountType("student")
         }}>
@@ -53,7 +54,7 @@ import { toast } from 'react-hot-toast';
         <button
          className={`${accountType === "instructor" 
         ? "bg-richblack-900 text-richblack-5" 
-        : "bg-transparent text-richblack-200"} px-4 py-1 rounded-full text-[0.875rem] transition-all duration-100 font-semibold  }`} 
+        : "bg-transparent text-richblack-200"} px-4 py-1 rounded-full text-[0.875rem] transition-all duration-200 font-semibold  }`} 
         onClick={()=>{
             setAccountType("instructor")
         }}>
